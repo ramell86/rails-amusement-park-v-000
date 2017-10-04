@@ -5,6 +5,7 @@ class Ride < ActiveRecord::Base
 
 
   def take_ride
+    
 
   end
 end
