@@ -1,4 +1,8 @@
 
-<%= form_for @users |f| do %>
-<%=f.label :name %>
-<%=f.text_area :name %>
+<%= form_for @user do |f| %>
+<%=f.label :name %>:
+<%=f.text_field :name %>:
+<%=f.label :height %>:
+<%=f.text_field :height %>:
+<%= f.submit%>
+<% end %>
