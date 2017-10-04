@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'users#new'
+  root "users#new"
+  # get '/', to: 'users#new', as
+  resource :users
 
 
 end

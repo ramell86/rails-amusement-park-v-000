@@ -1,8 +1,22 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
 
     # binding.pry
+  end
+
+  def create
+    @user = User.create(user_params)
+
+    redirect_to @user
+  end
+  def show
+
   end
   # def create
   #   @user = User.new(user_params)
@@ -17,9 +31,9 @@ class UsersController < ApplicationController
   #   @users = User.all
   # end
   # private
-  # def user_params
-  #   params.require(:use).permit(:name, :password, :nausea, :happiness,:tickets, :height, :admin)
-  # end
+  def user_params
+    params.require(:user).permit(:name, :password, :nausea, :happiness,:tickets, :height, :admin)
+  end
 
 
 end
