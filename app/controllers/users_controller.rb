@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # before_action :require_login
   def index
     @users = User.all
   end
@@ -20,7 +20,10 @@ class UsersController < ApplicationController
      end
   end
   def show
-     @user = User.find_by(id: params[:id])
+    # binding.pry
+   
+      @user = User.find_by(id: params[:id])
+  
   end
   
   private
