@@ -20,10 +20,11 @@ class UsersController < ApplicationController
      end
   end
   def show
-    # binding.pry
-   
+    redirect_to '/' unless
+      session.include? :user_id
+    
       @user = User.find_by(id: params[:id])
-  
+
   end
   
   private
