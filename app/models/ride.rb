@@ -5,7 +5,6 @@ class Ride < ActiveRecord::Base
 
 
   def take_ride
-    #  binding.pry
 
     if user.height < attraction.min_height && user.tickets < attraction.tickets
       return "Sorry. You do not have enough tickets to ride the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
@@ -14,7 +13,7 @@ class Ride < ActiveRecord::Base
     elsif user.height < attraction.min_height
       return "Sorry. You are not tall enough to ride the #{attraction.name}."
     end
-    
+
     new_tickets = user.tickets - attraction.tickets
     user.update_attribute(:tickets, new_tickets)
     
@@ -23,5 +22,7 @@ class Ride < ActiveRecord::Base
     
     new_happiness = user.happiness + attraction.happiness_rating
     user.update_attribute(:happiness, new_happiness)
+    
+    return "Thanks for riding the #{attraction.name}!"
   end
 end

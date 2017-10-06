@@ -10,8 +10,10 @@ root 'users#home'
   post '/signin', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
-  post '/users/:id', to: 'users#update'
+   post '/rides/new', to: 'rides#new'
   # get 'users/:id', to: 'users#edit'
-
+  # resources :users do
+  #   resources :rides
+  # end
 
 end

@@ -3,3 +3,6 @@
   
    <%= link_to "Go on #{attraction.name}", attraction %>
 <% end %>
+
+<% if current_user.admin? %>
+<% end %>

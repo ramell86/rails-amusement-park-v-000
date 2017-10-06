@@ -1,13 +1,14 @@
-<div>
+
 Name:<%= @attraction.name%>
 Tickets needed:<%= @attraction.tickets%>
 Nausea Rating:<%= @attraction.nausea_rating%>
 Happiness Rating:<%= @attraction.happiness_rating%>
 Height Requirement:<%= @attraction.min_height%>
 
-</div>
-<%= form_tag('/rides', method: :post) do %>
+
+<%= form_tag('/rides/new', method: :post) do %>
   <%= hidden_field_tag "attraction_id", @attraction.id %>
   <%= hidden_field_tag "user_id", @user.id %>
-  <%= button_to 'Go on this ride', user_path(@user) %>
+  <input type="submit" value="Go on this ride">
 <% end %>
+

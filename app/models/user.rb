@@ -6,13 +6,10 @@ class User < ActiveRecord::Base
   
 
   def mood
-    if self.nausea > self.happiness 
-      return 'sad'
-    else
-      return 'happy'
+    if self.nausea && self.happiness 
+      mood = self.happiness - self.nausea
+       mood > 0 ? "happy" : "sad"
     end
   end
-  def ticket_update
-    
-  end
+ 
 end
