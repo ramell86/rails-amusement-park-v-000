@@ -4,6 +4,9 @@ Tickets needed:<%= @attraction.tickets%>
 Nausea Rating:<%= @attraction.nausea_rating%>
 Happiness Rating:<%= @attraction.happiness_rating%>
 Height Requirement:<%= @attraction.min_height%>
+<% if current_user.admin%>
+<%= link_to "Edit Attraction", edit_attraction_path%>
+<% end %>
 
 
 <%= form_tag('/rides/new', method: :post) do %>
