@@ -1,0 +1,8 @@
+<div>
+Name:<%= @attraction.name%>
+Tickets needed:<%= @attraction.tickets%>
+Nausea Rating:<%= @attraction.nausea_rating%>
+Happiness Rating:<%= @attraction.happiness_rating%>
+Height Requirement:<%= @attraction.min_height%>
+</div>
+<%= button_to 'Go on this ride', user_path(@user) %>
