@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
       return 'happy'
     end
   end
+  def ticket_update
+    
+  end
 end

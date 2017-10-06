@@ -30,9 +30,7 @@ class UsersController < ApplicationController
    
   end
   def update
-    binding.pry
     @user = User.find_by(id: params[:id])
-    
     # @user.update_attribtutes(user_params)    
 
   end
